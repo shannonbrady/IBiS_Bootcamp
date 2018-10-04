@@ -1,0 +1,15 @@
+- Class: meta
+  Course: IBiS Bootcamp
+  Lesson: IBiS dplyr
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.3
+
+- Class: text
+  Output: In this lesson, we will use a package called dplyr to manipulate data.
+  
+- Class: cmd_question
+  Output: The package "dplyr" has already been installed by loading this course. Turn on the functions of the package by typing library(dplyr)
+  CorrectAnswer: library("dplyr")
+  AnswerTests: omnitest(correctExpr = 'library(dplyr)')

@@ -1,0 +1,32 @@
+- Class: meta
+  Course: IBiS Bootcamp
+  Lesson: Introduction
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.3
+
+- Class: script
+  Output: "I just opened an R script for you that contains some commented code (# in front of each line) as well as a spot for you to create a new vector called 'characters' \n\n Follow the instructions to complete the script. When you think you have it, save the script and type submit(). \n\nIf you mess up, type reset() to start from scratch."
+  AnswerTests: script_results_identical('characters'); multi_expr_creates_var('characters')
+  Hint: Follow the directions in the script comments very carefully. If R gave you an error above, try to understand what it is telling you. If you get stuck, type reset() to start with a fresh script, then save the script and type submit() when you are ready.
+  Script: intro_script1.R
+
+- Class: cmd_question
+  Output: "You now have an object in your global environment called characters! Check it out by typing 'characters'"
+  CorrectAnswer: characters
+  AnswerTests: omnitest(correctExp = 'characters')
+  
+- Class: cmd_question
+  Output: "You can check the class of the vector by typing class(characters). Try it now."
+  CorrectAnswer: class(characters)
+  AnswerTests: omnitest(correctExp = 'class(characters)')
+  
+- Class: text
+  Output: "Great! This is a vector of the class 'character' because the contents were not made up of numbers - not because they are Disney characters :)"
+  
+- Class: script
+  Output: "Let's add to this script by making another vector. This time we will include the year each character's film was made in the vector."
+  AnswerTests: script_results_identical('dates'); multi_expr_creates_var('dates')
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Script: intro_script2.R
