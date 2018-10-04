@@ -30,3 +30,96 @@
   AnswerTests: script_results_identical('dates'); multi_expr_creates_var('dates')
   Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
   Script: intro_script2.R
+  
+- Class: cmd_question
+  Output: "Check the class of your dates vector using class()"
+  CorrectAnswer: class(dates)
+  Hint: Type class(dates)
+  AnswerTests: omnitest(correctExp = 'class(dates)')
+
+- Class: script
+  Output: "One more vector. This time we will include whether or not each character is a princess. TRUE if so, FALSE if not."
+  AnswerTests: script_results_identical('princess'); multi_expr_creates_var('princess')
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Script: intro_script3.R
+  
+- Class: cmd_question
+  Output: "Check the class of your princess vector using class()"
+  CorrectAnswer: class(princess)
+  Hint: Type class(princess)
+  AnswerTests: omnitest(correctExp = 'class(princess)')
+  
+- Class: script
+  Output: "Now let's add to our script by combining our three vectors into one data frame called disney."
+  AnswerTests: script_results_identical('disney'); multi_expr_creates_var('disney')
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Script: intro_script4.R
+  
+- Class: cmd_question
+  Output: "View your new disney data frame with the View() function. Don't forget to capitalize the V!"
+  CorrectAnswer: View(disney)
+  Hint: Type View(disney)
+  AnswerTests: omnitest(correctExp = 'View(disney)')
+  
+- Class: cmd_question
+  Output: "For data frames, use the str() function instead of class to check out the class of each column. Try it now on disney"
+  CorrectAnswer: str(disney)
+  Hint: Type start(disney)
+  AnswerTests: omnitest(correctExp = 'str(disney)')
+  
+- Class: text
+  Output: "A data frame is just several vectors of the same length squished into one spreadsheet. Notice how each of your vectors became a column wihtin the disney dataframe."
+  
+- Class: cmd_question
+  Output: "The $ is a shortcut that tells R you want to look at one column in a data frame. For example diamonds$cut would look at the cut column of the dataframe diamonds (but you don't have that data frame in your environment). \n\nTry looking at the characters column of the disney data frame now."
+  Hint: Type disney$characters
+  CorrectAnswer: disney$characters
+  AnswerTests: omnitest(correctExp = 'disney$characters')
+  
+- Class: cmd_question
+  Output: "Remember when we looked at str(disney)? Depending on your computer settings, the characters column could have been saved as a factor, not a character, vector. \n\nCheck to see which class your computer used for the characters vector using class() and the $ functions."
+  Hint: Type class(disney$characters)
+  CorrectAnswer: class(disney$characters)
+  AnswerTests: omnitest(correctExp = 'class(disney$characters)')
+  
+- Class: script
+  Output: "Either way, let's force R to save the characters vector as a character. Overwrite the class of disney$characters with as.character(), specifiying the dataframe$columnname you are trying to overwrite"
+  AnswerTests: script_results_identical('disney$characters'); multi_expr_creates_var('disney$characters')
+  Hint: Try disney$characters <- as.character(disney$characters)
+  Script: intro_script5.R
+
+- Class: cmd_question
+  Output: "Check how many rows your disney dataframe has with nrow()."
+  Hint: Type nrow(disney)
+  CorrectAnswer: nrow(disney)
+  AnswerTests: omnitest(correctExp = 'nrow(disney)')
+  
+- Class: cmd_question
+  Output: "Check how many columnts your disney dataframe has with ncol()"
+  Hint: Type ncol(disney)
+  CorrectAnswer: ncol(disney)
+  AnswerTests: omnitest(correctExp = 'ncol(disney)')
+  
+- Class: text
+  Output: "Each cell of a data frame has a row and a column number. You can use square brackets to indicate the row and column of a given cell using df[row,col] where df is the data frame, row is the row number, and col is the column number of a cell."
+  
+- Class: cmd_question
+  Output: "You can check out the entire first row of a data frame using df[1,]. Notice you specified a row number but not a column number. Try that on your disney data frame now."
+  Hint: Type disney[1,]
+  CorrectAnswer: disney[1,]
+  AnswerTests: omnitest(correctExp = 'disney[1,]')
+  
+- Class: cmd_question
+  Output: "See if you can figure out how to look at the entire first column of the disney data frame."
+  Hint: Type disney[,1]
+  CorrectAnswer: disney[,1]
+  AnswerTests: omnitest(correctExp = 'disney[,1]')
+  
+- Class: cmd_question
+  Output: "Can you have R tell you the value in the first cell? (First row, first column of the disney data frame)?"
+  Hint: Type disney[1,1]
+  CorrectAnswer: disney[1,1]
+  AnswerTests: omnitest(correctExp = 'disney[1,1]')
+  
+- Class: text
+  Output: "Great job! Next, run the Logic program within the regular swirl course repository."
