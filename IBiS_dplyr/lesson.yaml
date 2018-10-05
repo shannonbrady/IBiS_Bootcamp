@@ -59,9 +59,90 @@
   AnswerTests: script_vals_identical()
   Script: save2.R 
   
-- Class: text
-  Output: "Now let's do a little analysis on our human data."
+- Class: cmd_question
+  Output: "You can remove the humans data frame from your environment using rm(). Go ahead and remove it-- we can work with the full starwars dataframe."
+  CorrectAnswer: rm(humans)
+  AnswerTests: omnitest(correctExpr = 'rm(humans)')
   
+- Class: text
+  Output: "Now let's do a little analysis on our starwars data."
+  
+- Class: script
+  Output: "Complete the script to check out the number of unique species in our data."
+  AnswerTests: script_vals_identical()
+  Hint: In the second step, wrap then entire first step into the length() function.
+  Script: unique1.R 
 
+- Class: script
+  Output: "Make a new variable that keeps only characters with no hair."
+  AnswerTests: script_vals_identical()
+  Hint: Remember, dplyr::filter() takes a data frame and a logical argument. If the argument evaluates to true, the row will be kept. Remember '==' means 'is equal to'.
+  Script: filter2.R 
+  
+- Class: script
+  Output: "Complete the script to make a new variable that includes brown and black haired characters"
+  AnswerTests: script_results_identical('dark'); multi_expr_creates_var('dark')
+  Hint: First, place your "brown","black" arguments within the c(). Then filter for rows where hair_color is WITHIN that keepers vector. (Hint: within = %in%).
+  Script: filter3.R 
+  
+- Class: script
+  Output: "Now learn the dplyr::select function to get rid of some unneeded columns"
+  AnswerTests: script_results_identical('selected'); multi_expr_creates_var('selected')
+  Hint: "dplyr::select requires the dataframe of interest first, then the name of each column you want to keep, separated by commas"
+  Script: filter4.R
+  
+- Class: text
+  Output: "The pipe function in dplyr saves lots of time and keeps your script clean. Type '%>%' to mean 'pipe'."
+  
+- Class: script
+  Output: "Try using the pipe to complete this sript."
+  AnswerTests: script_results_identical('dark'); multi_expr_creates_var('dark')
+  Hint: "So far, this script says to make a variable called 'dark' which takes the starwars dataframe and then filters for hair_color to be within [some vector] and then selects [certain columns]."
+  Script: pipe1.R
+  
+- Class: cmd_question
+  Output: "There are some NAs in our dataset. Let's remove cases where height is NA. First, try typing is.na(dark$height)"
+  CorrectAnswer: is.na(dark$height)
+  AnswerTests: omnitest(correctExpr = 'is.na(dark$height)')
+  
+- Class: text
+  Output: "Notice that this function tested whether each case is NA within the given vector."
+  
+- Class: cmd_question
+  Output: "Can you make R display whether each value in the height column is NOT NA?"
+  CorrectAnswer: !is.na(dark$height)
+  Hint: "It's the same thing as before, but your ! means 'not'"
+  AnswerTests: omnitest(correctExpr = '!is.na(dark$height)')
+  
+- Class: script
+  Output: "Add onto your pipe and keep rows where the height column is NOT NA."
+  AnswerTests: script_results_identical('dark'); multi_expr_creates_var('dark')
+  Hint: "Remember, in the pipe you do not need to clarify the dataframe. Just put the column name of interest as your vector argument."
+  Script: pipe2.R
+  
+- Class: script
+  Output: "Add onto your pipe and group the data by species, then make a new column that shows the average height for each species"
+  AnswerTests: script_results_identical('dark'); multi_expr_creates_var('dark')
+  Hint: "If you get stuck, try ?group_by or ?summarize"
+  Script: pipe3.R
+  
+- Class: script
+  Output: "Making data wide (multiple observations per row) versus long (one observation per row) is a useful tool for plotting. \n\nCheck out this script, play around with it. And when you're ready to move on type reset() then submit()."
+  AnswerTests: script_results_identical('dark'); multi_expr_creates_var('dark')
+  Script: pipe3.R
+  
+- Class: text
+  Output: "Long format is used for plotting because you can easily filter for a particular variable (e.g. height) and use the value column for the plot. We will cover this in the workshop."
+  
+- Class: script
+  Output: "Now use the mutate function to calculate the BMI of each character. Call the new column 'bmi'"
+  AnswerTests: script_results_identical('fatty'); multi_expr_creates_var('fatty')
+  Script: mutate1.R
 
+- Class: script
+  Output: "Finish it off by arranging your dataframe by bmi in descending order."
+  AnswerTests: script_results_identical('fatty'); multi_expr_creates_var('fatty')
+  Script: arrange1.R
 
+- Class: text
+  Output: "Great job! You're ready to join the rest of the bootcamp and learn R Markdown and plotting!"
