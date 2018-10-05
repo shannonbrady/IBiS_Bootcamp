@@ -13,3 +13,55 @@
   Output: The package "dplyr" has already been installed by loading this course. Turn on the functions of the package by typing library(dplyr)
   CorrectAnswer: library("dplyr")
   AnswerTests: omnitest(correctExpr = 'library(dplyr)')
+
+- Class: text
+  Output: One great thing about packages is that many of them come with some datasets you can play around with. Dplyr comes with a starwars dataframe.
+  
+- Class: cmd_question
+  Output: For example, dplyr comes with a data frame called starwars. Place it onto your environment using data(starwars)
+  CorrectAnswer: data(starwars)
+  AnswerTests: omnitest(correctExpr = 'data(starwars)')
+  
+- Class: cmd_question
+  Output: "View the starwars dataset using View(starwars)"
+  CorrectAnswer: View(starwars)
+  AnswerTests: omnitest(correctExpr = 'View(starwars)')
+  
+- Class: cmd_question
+  Output: "Check out the structure of the dataframe using str()"
+  CorrectAnswer: str(starwars)
+  AnswerTests: omnitest(correctExpr = 'str(starwars)')
+  
+- Class: script
+  Output: "Fill in this script to filter out only the humans from the starwars data frame. When you think you have it, save the sript and type submit()"
+  Hint: The humans all have the value 'human' in the column 'species'.
+  AnswerTests: script_results_identical('humans'); multi_expr_creates_var('humans')
+  Script: filter1.R
+  
+- Class: text
+  Output: Now let's practice saving this subset of data.
+  
+- Class: cmd_question
+  Output: "First we should check out where R would put things if we were to save it in our current directory. \n\nCheck your working directory by typing getwd()"
+  CorrectAnswer: getwd()
+  AnswerTests: omnitest(correctExpr = 'getwd()')
+  
+- Class: text
+  Output: "Notice that a directory is always in quotation marks. Think of it as the pathway through every folder starting all the way at your home directory (usually /Users/name/)."
+
+- Class: script
+  Output: "Check out this script to see how to save a .Rda file. When you're ready, type submit()"
+  AnswerTests: script_vals_identical()
+  Script: save1.R
+  
+- Class: script
+  Output: "Let's save this file as a .csv instead. Complete the script, save, and type submit()"
+  AnswerTests: script_vals_identical()
+  Script: save2.R 
+  
+- Class: text
+  Output: "Now let's do a little analysis on our human data."
+  
+
+
+
