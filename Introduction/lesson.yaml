@@ -7,7 +7,7 @@
   Version: 2.4.3
 
 - Class: script
-  Output: "I just opened an R script for you that contains some commented code (# in front of each line) as well as a spot for you to create a new vector called 'characters' \n\n Follow the instructions to complete the script. When you think you have it, save the script and type submit(). \n\nIf you mess up, type reset() to start from scratch."
+  Output: "I just opened an R script for you that contains some commented code (# in front of each line) as well as a spot for you to create a new vector called 'characters' \n\n Follow the instructions to complete the script. Try running the script using the Run button up top. When you think you have it, save the script and type submit(). \n\nIf you mess up, type reset() to start from scratch."
   AnswerTests: script_results_identical('characters'); multi_expr_creates_var('characters')
   Hint: Follow the directions in the script comments very carefully. If R gave you an error above, try to understand what it is telling you. If you get stuck, type reset() to start with a fresh script, then save the script and type submit() when you are ready.
   Script: intro_script1.R
@@ -84,7 +84,7 @@
   
 - Class: script
   Output: "Either way, let's force R to save the characters vector as a character. Overwrite the class of disney$characters with as.character(), specifiying the dataframe$columnname you are trying to overwrite"
-  AnswerTests: script_results_identical('disney$characters'); multi_expr_creates_var('disney$characters')
+  AnswerTests: script_results_identical('disney'); multi_expr_creates_var('disney')
   Hint: Try disney$characters <- as.character(disney$characters)
   Script: intro_script5.R
 
@@ -122,4 +122,79 @@
   AnswerTests: omnitest(correctExp = 'disney[1,1]')
   
 - Class: text
-  Output: "Great job! Next, run the Logic program within the regular swirl course repository."
+  Output: "Great job! Now let's learn about some logic expressions"
+  
+- Class: script
+  Output: "To test if two quantities are equivalent, use == (two equal signs). Try using == to see if any element of the characters vector is equal to 'Cinderella'"
+  AnswerTests: script_vals_identical()
+  Hint: Type == between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Script: logic1.R
+
+- Class: script
+  Output: "To test if two quantities are NOT equivalent, use !=. Try using != to see if any element of the characters vector is equal to 'Cinderella'"
+  AnswerTests: script_vals_identical()
+  Hint: Type != between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Script: logic2.R
+  
+- Class: cmd_question
+  Output: "The ! is a great function that means NOT. Test if 3 is not equal to 5"
+  Hint: Type 3!=5
+  CorrectAnswer: 3 != 5
+  AnswerTests: omnitest(correctExp = '3!=5')
+  
+- Class: script
+  Output: "To see if an element is within a vector, use %in%. Use it to see if 'Cinderella' is within the vector characters"
+  AnswerTests: script_vals_identical()
+  Hint: Type %in% between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Script: logic3.R  
+  
+- Class: text
+  Output: "If you ever want to test the opposite of a logic, just wrap the statement in !()"
+ 
+- Class: script
+  Output: "> and < functions evaluate as you would expect. See if any elements of the dates vector are older than 1995"
+  AnswerTests: script_vals_identical()
+  Hint: Type < between dates and 1995. Save and submit() or if you mess up use reset().
+  Script: logic4.R 
+  
+- Class: text
+  Output: "Now that you know some logic functions, let's introduce if/else statements. \n\nThese statements first test a logical expression. If TRUE, they do something. If FALSE, they do something else."
+  
+- Class: text
+  Output: "The ifelse() function takes three arguments: logic, if true, if false."
+  
+- Class: script
+  Output: "For each element of the characters vector, determine whether the element is equal to 'Cinderella'. If so, print 'Hello, Cinderella'. Otherwise, print 'You're not Cinderella.'"
+  AnswerTests: script_vals_identical()
+  Hint: Put your logical condition before the first comma within the ifelse function.
+  Script: logic5.R 
+
+- Class: script
+  Output: "Use what you have learned to complete the script."
+  AnswerTests: script_vals_identical()
+  Hint: Fill in the ifelse() function with your logical, what to do if true, what to do if false.
+  Script: logic6.R 
+  
+- Class: text
+  Output: "We usually use ifelse functions within a loop. A loop will cycle through each element of a defined set."
+  
+- Class: script
+  Output: "This 'for' loop has the input 'i' evaluated for the numbers 1 through 10. \n\nFor each value of i, this loop will print the value of i. \n\nTest it to see it in action, then type submit()"
+  AnswerTests: script_vals_identical()
+  Hint: If you changed the function, reset() then submit().
+  Script: loop1.R   
+  
+- Class: script
+  Output: "Try to finish this loop. Remember, you can run the script as many times as you want and submit() when you think you have it."
+  AnswerTests: script_vals_identical()
+  Hint: You want R to print disney[1,1], then disney[2,1], then disney[3,1].
+  Script: loop2.R 
+  
+- Class: script
+  Output: "Combine all you learned into this final script."
+  AnswerTests: script_vals_identical()
+  Hint: If disney[row,3] is TRUE, print(disney[row,1]), else print("Not a princess!")
+  Script: loop3.R 
+  
+- Class: text
+  Output: "Congratulations, you finished the Introduction material! Move on to the dplyr lesson next!"
