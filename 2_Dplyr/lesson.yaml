@@ -127,7 +127,7 @@
   Script: pipe3.R
   
 - Class: script
-  Output: "Making data wide (multiple observations per row) versus long (one observation per row) is a useful tool for plotting. \n\nCheck out this script, play around with it. And when you're ready to move on type reset() then submit()."
+  Output: "Making data wide (multiple observations per row) versus long (one observation per row) is a useful tool for plotting. \n\nCheck out this script, play around with it. Remove all your changes then submit()."
   AnswerTests: script_vals_identical()
   Script: gather1.R
   

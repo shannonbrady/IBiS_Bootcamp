@@ -7,9 +7,9 @@
   Version: 2.4.3
 
 - Class: script
-  Output: "I just opened an R script for you that contains some commented code (# in front of each line) as well as a spot for you to create a new vector called 'characters' \n\n Follow the instructions to complete the script. Try running the script using the Run button up top. When you think you have it, save the script and type submit(). \n\nIf you mess up, type reset() to start from scratch."
+  Output: "I just opened an R script for you that contains some commented code (# in front of each line) as well as a spot for you to create a new vector called 'characters' \n\n Follow the instructions to complete the script. Try running the script using the Run button up top. When you think you have it, save the script and type submit()."
   AnswerTests: script_results_identical('characters'); multi_expr_creates_var('characters')
-  Hint: Follow the directions in the script comments very carefully. If R gave you an error above, try to understand what it is telling you. If you get stuck, type reset() to start with a fresh script, then save the script and type submit() when you are ready.
+  Hint: Follow the directions in the script comments very carefully. If R gave you an error above, try to understand what it is telling you. You can run the script as many times as you want. When you're ready to submit, save the script and type submit().
   Script: intro_script1.R
 
 - Class: cmd_question
@@ -28,7 +28,7 @@
 - Class: script
   Output: "Let's add to this script by making another vector. This time we will include the year each character's film was made in the vector."
   AnswerTests: script_results_identical('dates'); multi_expr_creates_var('dates')
-  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit().
   Script: intro_script2.R
   
 - Class: cmd_question
@@ -40,7 +40,7 @@
 - Class: script
   Output: "One more vector. This time we will include whether or not each character is a princess. TRUE if so, FALSE if not."
   AnswerTests: script_results_identical('princess'); multi_expr_creates_var('princess')
-  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit().
   Script: intro_script3.R
   
 - Class: cmd_question
@@ -52,7 +52,7 @@
 - Class: script
   Output: "Now let's add to our script by combining our three vectors into one data frame called disney."
   AnswerTests: script_results_identical('disney'); multi_expr_creates_var('disney')
-  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). If you messed up, you can always type reset() and start over.
+  Hint: Follow the script carefully. When you are done, save the script and type sumbmit(). 
   Script: intro_script4.R
   
 - Class: cmd_question
@@ -127,13 +127,13 @@
 - Class: script
   Output: "To test if two quantities are equivalent, use == (two equal signs). Try using == to see if any element of the characters vector is equal to 'Cinderella'"
   AnswerTests: script_vals_identical()
-  Hint: Type == between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Hint: Type == between characters and "Cinderella". Save and submit().
   Script: logic1.R
 
 - Class: script
   Output: "To test if two quantities are NOT equivalent, use !=. Try using != to see if any element of the characters vector is equal to 'Cinderella'"
   AnswerTests: script_vals_identical()
-  Hint: Type != between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Hint: Type != between characters and "Cinderella". Save and submit().
   Script: logic2.R
   
 - Class: cmd_question
@@ -145,7 +145,7 @@
 - Class: script
   Output: "To see if an element is within a vector, use %in%. Use it to see if 'Cinderella' is within the vector characters"
   AnswerTests: script_vals_identical()
-  Hint: Type %in% between characters and "Cinderella". Save and submit() or if you mess up use reset().
+  Hint: Type %in% between characters and "Cinderella". Save and submit().
   Script: logic3.R  
   
 - Class: text
@@ -154,7 +154,7 @@
 - Class: script
   Output: "> and < functions evaluate as you would expect. See if any elements of the dates vector are older than 1995"
   AnswerTests: script_vals_identical()
-  Hint: Type < between dates and 1995. Save and submit() or if you mess up use reset().
+  Hint: Type < between dates and 1995. Save and submit().
   Script: logic4.R 
   
 - Class: text
@@ -181,7 +181,7 @@
 - Class: script
   Output: "This 'for' loop has the input 'i' evaluated for the numbers 1 through 10. \n\nFor each value of i, this loop will print the value of i. \n\nTest it to see it in action, then type submit()"
   AnswerTests: script_vals_identical()
-  Hint: If you changed the function, reset() then submit().
+  Hint: If you changed the function, undo your changes then submit().
   Script: loop1.R   
   
 - Class: script
